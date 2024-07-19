@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Form</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="userName">User Name*</label>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+            <div class="form-group">
+                <label for="workoutType">Workout Type*</label>
+                <select id="workoutType" name="workoutType" required>
+                    <option value="cycling">Cycling</option>
+                    <option value="running">Running</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="yoga">Yoga</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="workoutMinutes">Workout Minutes*</label>
+                <input type="number" id="workoutMinutes" name="workoutMinutes" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit">Add Workout</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- table  -->
+
+
+    <div class="search-filter-container">
+        <input type="text" id="search" placeholder="Search">
+        <select id="filterWorkoutType">
+            <option value="all">All</option>
+            <option value="running">Running</option>
+            <option value="cycling">Cycling</option>
+            <option value="swimming">Swimming</option>
+            <option value="yoga">Yoga</option>
+            <!-- Add more options as needed -->
+        </select>
+        <p id="showresult"></p>
+    </div>
+    <table class="workout-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Workouts</th>
+                <th>Number of Workouts</th>
+                <th>Total Workout Minutes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>Running, Cycling</td>
+                <td>2</td>
+                <td>75</td>
+            </tr> 
+            <tr>
+                <td>Jane Smith</td>
+                <td>Swimming, Running</td>
+                <td>2</td>
+                <td>80</td>
+            </tr> 
+            <tr>
+                <td>Mike Johnson</td>
+                <td>Yoga, Cycling</td>
+                <td>2</td>
+                <td>90</td>
+            </tr> 
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button class="previous">« Previous</button>
+        <button class="page-number active">1</button>
+        <button class="page-number">2</button>
+        <button class="next">Next »</button>
+        <select id="itemsPerPage">
+            <option value="5">Items per page: 5</option>
+            <option value="10">Items per page: 10</option>
+            <option value="15">Items per page: 15</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+
+
+    <!-- progress -->
+    <div class="container">
+        <div class="sidebar">
+            <ul id="userList">
+                <li data-id="1" class="active">John Doe</li>
+                <li data-id="2">Jane Smith</li>
+                <li data-id="3">Mike Johnson</li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1 id="userName">John Doe's workout progress</h1>
+            <canvas id="workoutChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="script.js"></script> -->
+
+    <script src="ap.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>
