@@ -101,56 +101,56 @@ searchValue.addEventListener('input', function() {
 
 // progress
 
-const userList = document.getElementById('userList');
-const userName = document.getElementById('userName');
-const ctx = document.getElementById('workoutChart').getContext('2d');
-let chart;
+// const userList = document.getElementById('userList');
+// const userName = document.getElementById('userName');
+// const ctx = document.getElementById('workoutChart').getContext('2d');
+// let chart;
 
-function renderChart(workouts) {
-    const labels = workouts.map(workout => workout.type);
-    const data = workouts.map(workout => workout.minutes);
+// function renderChart(workouts) {
+//     const labels = workouts.map(workout => workout.type);
+//     const data = workouts.map(workout => workout.minutes);
 
-    if (chart) {
-        chart.destroy();
-    }
+//     if (chart) {
+//         chart.destroy();
+//     }
 
-    chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Minutes',
-                data: data,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
+//     chart = new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//             labels: labels,
+//             datasets: [{
+//                 label: 'Minutes',
+//                 data: data,
+//                 backgroundColor: 'rgba(54, 162, 235, 0.5)',
+//                 borderColor: 'rgba(54, 162, 235, 1)',
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
+// }
 
-function updateUser(id) {
-    const user = userData.find(user => user.id == id);
-    if (user) {
-        userName.textContent = `${user.name}'s workout progress`;
-        renderChart(user.workouts);
-    }
-}
+// function updateUser(id) {
+//     const user = userData.find(user => user.id == id);
+//     if (user) {
+//         userName.textContent = `${user.name}'s workout progress`;
+//         renderChart(user.workouts);
+//     }
+// }
 
-userList.addEventListener('click', function (e) {
-    if (e.target.tagName === 'LI') {
-        document.querySelectorAll('.sidebar ul li').forEach(li => li.classList.remove('active'));
-        e.target.classList.add('active');
-        updateUser(e.target.dataset.id);
-    }
-});
+// userList.addEventListener('click', function (e) {
+//     if (e.target.tagName === 'LI') {
+//         document.querySelectorAll('.sidebar ul li').forEach(li => li.classList.remove('active'));
+//         e.target.classList.add('active');
+//         updateUser(e.target.dataset.id);
+//     }
+// });
 
-// Initialize with the first user's data
-updateUser(1);
+// // Initialize with the first user's data
+// updateUser(1);
