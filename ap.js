@@ -55,7 +55,7 @@ submit.addEventListener('click', function(event) {
     <tr>
         <td>${username.value}</td>
         <td>${workoutType.value}</td>
-        <td>${count}</td>
+        // <td>${count}</td>
         <td>${minutes.value}</td>
     </tr>`;
 });
@@ -77,19 +77,19 @@ submit.addEventListener('click', function(event) {
 
 // search by name
 
-const searchValue = document.getElementById('search')
-searchValue.addEventListener('input', function() {
-    const search = searchValue.value.toLowerCase();
-    const filteredData = userData.filter(user => user.name.toLowerCase().includes(search));
-    // console.log(filteredData[0].name)
-     window.alert(` <tr>
-        <td>${filteredData[0].name}</td>
-        <td>${filteredData[0].workouts[0].type}</td>
-        <td>${filteredData[0].workouts.length}</td>
-        <td>${filteredData[0].workouts[0].minutes}</td>
-    </tr>`) 
+// const searchValue = document.getElementById('search')
+// searchValue.addEventListener('input', function() {
+//     const search = searchValue.value.toLowerCase();
+//     const filteredData = userData.filter(user => user.name.toLowerCase().includes(search));
+//     // console.log(filteredData[0].name)
+//      window.alert(` <tr>
+//         <td>${filteredData[0].name}</td>
+//         <td>${filteredData[0].workouts[0].type}</td>
+//         // <td>${filteredData[0].workouts.length}</td>
+//         <td>${filteredData[0].workouts[0].minutes}</td>
+//     </tr>`) 
     
-});
+// });
 
 
 
