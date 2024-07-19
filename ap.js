@@ -55,7 +55,6 @@ submit.addEventListener('click', function(event) {
     <tr>
         <td>${username.value}</td>
         <td>${workoutType.value}</td>
-        // <td>${count}</td>
         <td>${minutes.value}</td>
     </tr>`;
 });
